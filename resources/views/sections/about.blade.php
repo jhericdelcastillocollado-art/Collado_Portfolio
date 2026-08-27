@@ -4,7 +4,7 @@
             <div class="about-image-col animate-on-scroll">
                 <div class="about-image">
                     <div class="about-image-placeholder">
-                     <img src="./images/a1.jpg" width="800" height="950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                     <img src="./images/a1.jpg" alt="Profile photo">
                       <!--  <span>Add your photo here</span> -->
                     </div>
                 </div>
