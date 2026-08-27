@@ -1,59 +1,112 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Collado Portfolio
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A personal portfolio website built with Laravel 12, showcasing the work, skills, and educational background of **Jheric Joshua D. Collado** — a Full-Stack Developer & UI Designer and BSIT student based in Bangued, Abra.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Hero Section** — Display name, title, profile photo, and call-to-action buttons
+- **About** — Short bio with profile photo and a skills/technologies grid
+- **Education** — Academic timeline with degree and institution details
+- **Projects** — Card-based grid layout for featured work with category tags and technology labels
+- **Contact** — Contact information (email, phone, location), social media links, and a mailto-based contact form
+- **Dark Mode** — Toggle with `localStorage` persistence and OS `prefers-color-scheme` detection
+- **Responsive Design** — Mobile-first layout with a hamburger navigation menu
+- **Scroll Animations** — IntersectionObserver-based fade-in effects with reduced-motion support
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Technologies
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend:** Laravel 12 (PHP ^8.2)
+- **Templating:** Laravel Blade
+- **Styling:** Custom CSS with CSS custom properties (variables), dark mode palette, responsive breakpoints
+- **JavaScript:** Vanilla JS (scroll animations, theme toggle, mobile menu, smooth scrolling)
+- **Build Tool:** Vite
+- **Fonts:** Google Fonts — Inter (body) + Sora (headings)
 
-## Learning Laravel
+## Project Structure
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+```
+├── app/
+├── public/
+│   ├── assets/
+│   │   ├── css/styles.css          # Main stylesheet (custom CSS, dark mode, responsive)
+│   │   └── js/app.js               # Vanilla JS (animations, theme, navigation)
+│   └── images/                     # Profile and project images
+├── resources/
+│   └── views/
+│       ├── home.blade.php          # Main page composition
+│       ├── layouts/app.blade.php   # Master layout (HTML shell, meta tags, scripts)
+│       ├── partials/
+│       │   ├── navbar.blade.php    # Sticky navigation with dark mode toggle
+│       │   └── footer.blade.php    # Footer with links and social icons
+│       └── sections/
+│           ├── hero.blade.php      # Hero/landing section
+│           ├── about.blade.php     # About me + skills
+│           ├── education.blade.php # Education timeline
+│           ├── projects.blade.php  # Project cards grid
+│           └── contact.blade.php   # Contact info + form
+├── routes/web.php                  # Single route — all portfolio data defined here
+├── composer.json
+├── package.json
+└── vite.config.js
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Portfolio Data
 
-## Laravel Sponsors
+All portfolio content (personal information, skills, education, and projects) is defined in `routes/web.php` and passed to the Blade views via `compact()`. To update any content, edit the arrays in that file.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Current Sections
 
-### Premium Partners
+| Section | Details |
+|---------|---------|
+| **Personal Info** | Name, title, location, email, phone, GitHub, LinkedIn, Twitter, Dribbble |
+| **Skills** | PHP, Laravel, JavaScript, TypeScript, React, Vue.js, Node.js, HTML5, CSS3, Tailwind CSS, MySQL, PostgreSQL, Git, Docker, AWS, Figma |
+| **Education** | BS in IT (Data Center College, 2023–2026), Humanities & Social Science (Divine World College, 2020–2022) |
+| **Projects** | Patient Record Management System (VB.NET) |
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Installation
 
-## Contributing
+1. **Clone the repository**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   ```bash
+   git clone https://github.com/jhericdelcastillocollado-art/Collado_Portfolio.git
+   cd Collado_Portfolio
+   ```
 
-## Code of Conduct
+2. **Install PHP dependencies**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   ```bash
+   composer install
+   ```
 
-## Security Vulnerabilities
+3. **Install Node dependencies**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   ```bash
+   npm install
+   ```
+
+4. **Set up environment**
+
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+5. **Start the development server**
+
+   ```bash
+   php artisan serve
+   ```
+
+   In a separate terminal, run the Vite dev server for front-end assets:
+
+   ```bash
+   npm run dev
+   ```
+
+6. **Open in browser**
+
+   Visit [http://localhost:8000](http://localhost:8000)
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
